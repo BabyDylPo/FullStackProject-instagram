@@ -19,3 +19,5 @@ const App = () => (
         </header>
     </div>
 )
+
+export default App;
