@@ -4,10 +4,10 @@ class User < ApplicationRecord
     #########################  VALIDATIONS  ###############################
     validates :username, :password_digest, :session_token, presence: true
     validates :username, uniqueness: true
-    validates :password, length {minimum: 6 }, allow_nil: true
-    validates :bio, length { maximum: 200 } #allow_nil: true
-    validates :display_name, length { maximum: 50 } #allow_nil: true
-    validates :phone_number, length { minimum: 15 } allow_nil: true
+    validates :password, length: {minimum: 6 }, allow_nil: true
+    validates :bio, length: { maximum: 200 } #allow_nil: true
+    validates :display_name, length: { maximum: 50 } #allow_nil: true
+    validates :phone_number, length: { minimum: 15 } allow_nil: true
     #######################################################################
 
     after_initialize :ensure_session_token
