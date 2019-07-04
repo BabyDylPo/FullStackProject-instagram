@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // }
     //IF YOU COMMIT THE ABOVE IN, COMMIT THE DIRECTLY BELOW OUT
     let store = configureStore();
+    
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
 })
