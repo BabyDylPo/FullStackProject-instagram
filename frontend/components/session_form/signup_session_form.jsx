@@ -10,7 +10,10 @@ class SessionForm extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+
+
     }
+
 
     update(field) {
         return e => this.setState({
@@ -24,8 +27,9 @@ class SessionForm extends React.Component {
         this.props.processForm(user);
     }
 
+
     renderErrors() {
-        return(
+        return (
             <ul>
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
@@ -39,69 +43,56 @@ class SessionForm extends React.Component {
     render() {
         return (
             <div className="page-container">
-                <div className="picture-container">
-                        <h2>picture goes here</h2>
-                    <div className="picture-container-picture">
-                        <h3>changing picture goes here</h3>
-                    </div>
-                </div>
-            
                 <div className="form-container">
                     <h1>Finstagram</h1>
                     <div className="form-container-box">
                         <form onSubmit={this.handleSubmit} className="form">
-                            <h2>Sign up to see fake photos and fake videos from your fake friends.</h2>
-                            <br/>
+                            <br />
                             {this.renderErrors()}
-                            <div className="submit-button-container">
-                                <input type="submit" value="Demo Login" className="submit-button"/>
-                            </div>
-                            <br/>
-                            <div className="form-separator">
-                                OR
-                            </div>
-                            <br/>
                             <div className="form-label-container">
                                 <div className="form-label-container-box">
                                     <label className="form-label">Username
-                                        <input 
-                                        type="text" 
-                                        value={this.state.username} 
-                                        onChange={this.update('username')}
-                                        className="form-input"
+                                        <input
+                                            type="text"
+                                            value={this.state.username}
+                                            onChange={this.update('username')}
+                                            className="form-input"
                                         />
                                     </label>
                                 </div>
-                                <br/>
-                                <div className="form-label-container-box">
-                                    <label className="form-label">Email
-                                        <input 
-                                        type="text" 
-                                        value={this.state.email} 
-                                        onChange={this.update('email')}
-                                        className="form-input"
+                                <br />
+                                <div className="form-label-container">
+                                    <label className="form-label-container-box">Email
+                                        <input
+                                            type="text"
+                                            value={this.state.email}
+                                            onChange={this.update('email')}
+                                            className="form-input"
                                         />
                                     </label>
                                 </div>
-                                <br/>
-                                <div className="form-label-container-box">
-                                    <label className="form-label">Password
-                                        <input 
-                                        type="password" 
-                                        value={this.state.password} 
-                                        onChange={this.update('password')}
-                                        className="form-input"
+                                <br />
+                                <div className="form-label-container">
+                                    <label className="form-label-container-box">Password
+                                        <input
+                                            type="password"
+                                            value={this.state.password}
+                                            onChange={this.update('password')}
+                                            className="form-input"
                                         />
                                     </label>
                                 </div>
-                                <br/>
+                                <br />
                                 <div className="submit-button-container">
                                     <input className="submit-button" type="submit" value={this.props.formType} />
                                 </div>
-                                <div className="terms-container">
-                                    <p>By signing up, you agree to our 
-                                        ... list of things you are not going to read.
-                                    </p>
+                                <br />
+                                <div className="form-separator">
+                                    OR
+                                </div>
+                                <br />
+                                <div className="submit-button-container">
+                                    <input type="submit" value="Demo Login" className="submit-button" />
                                 </div>
                             </div>
                         </form>
@@ -114,7 +105,7 @@ class SessionForm extends React.Component {
                         <p>Get the app.</p>
                         <div className="download-link-container-box">
                             <a className="download-link" href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&amp;ct=igweb.loginPage.badge&amp;mt=8&amp;vt=lo">Apple Store</a>
-                            <br/>
+                            <br />
                             <a className="download-link" href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3DXQ59hQAEAAFKbAmuaEfztY0eCuef%26utm_content%3Dlo%26utm_medium%3Dbadge">Google Store</a>
                         </div>
                     </div>

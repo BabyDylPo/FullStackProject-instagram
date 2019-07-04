@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { signup } from '../../actions/session_actions';
-import SignupSessionForm from './signup_session_form';
+import SessionForm from './session_form';
 
 const mapStateToProps = ({ errors }) => {
     return {
@@ -18,4 +18,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignupSessionForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
