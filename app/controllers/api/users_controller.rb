@@ -3,7 +3,7 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
 
         if @user.save
-            login(@user)
+            login!(@user)
             render "api/users/show"
         else
             render json: @user.errors.full_messages, status: 422 #what status is this? should this be here?
@@ -13,6 +13,6 @@ class Api::UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:username, :password) #could probably permit more!!!!!
+        params.require(:user).permit(:username, :password, :email) #could probably permit more!!!!!
     end
 end
