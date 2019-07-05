@@ -48,7 +48,7 @@ class SessionForm extends React.Component {
                         <h1 className="form-header">Finstagram</h1>
                         <div className="form-container-box">
                             <form onSubmit={this.handleSubmit} className="form">
-                                <br />
+                                
                                 {this.renderErrors()}
                                 <div className="form-label-container">
                                     <div className="form-label-container-box">
@@ -62,7 +62,7 @@ class SessionForm extends React.Component {
                                             />
                                         </label>
                                     </div>
-                                    <br />
+                                    
                                     <div className="form-label-container">
                                         <label className="form-label-container-box">Email
                                             <input
@@ -73,7 +73,7 @@ class SessionForm extends React.Component {
                                             />
                                         </label>
                                     </div>
-                                    <br />
+                                    
                                     <div className="form-label-container">
                                         <label className="form-label-container-box">Password
                                             <input
@@ -84,15 +84,15 @@ class SessionForm extends React.Component {
                                             />
                                         </label>
                                     </div>
-                                    <br />
+                                    
                                     <div className="submit-button-container">
                                         <input className="submit-button" type="submit" value={this.props.formType} />
                                     </div>
-                                    <br />
+                                    
                                     <div className="form-separator">
                                         OR
                                     </div>
-                                    <br />
+                                    
                                     <div className="submit-button-container">
                                         <input type="submit" value="Demo Login" className="submit-button" />
                                     </div>
@@ -107,7 +107,7 @@ class SessionForm extends React.Component {
                             <p>Get the app.</p>
                             <div className="download-link-container-box">
                                 <a className="download-link" href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&amp;ct=igweb.loginPage.badge&amp;mt=8&amp;vt=lo">Apple Store</a>
-                                <br />
+                                
                                 <a className="download-link" href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3DXQ59hQAEAAFKbAmuaEfztY0eCuef%26utm_content%3Dlo%26utm_medium%3Dbadge">Google Store</a>
                             </div>
                         </div>

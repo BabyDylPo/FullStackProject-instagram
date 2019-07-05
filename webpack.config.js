@@ -10,7 +10,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.jsx?$/, use: 'raw-loader',
                 exclude: /(node_modules)/,
                 use: {
                     loader: 'babel-loader',
