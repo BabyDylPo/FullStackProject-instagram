@@ -24,7 +24,7 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -48,4 +48,47 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+/////////////////////////////////////////////
+html {
+    background-color: #fafafa;
+}
+.page-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 30px 30px 0 30px;
+    padding-bottom: 44px;
+    width: 100%;
+    max-width: 935px;
+    background-color: #fafafa;
+}
+
+.page-container-box {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 500px;
+    margin: 0px auto;
+}
+
+.picture-container {
+    align-content: center;
+}
+
+.form-container {
+    width: 300px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 1px;
+}
+
+.form-header {
+    height: 51px;
+    width: 175px;
+    margin: 22px auto 12px;
+    text-align: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
