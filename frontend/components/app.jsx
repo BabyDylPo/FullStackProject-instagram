@@ -17,11 +17,7 @@ import GreetingContainer from '../components/home/greeting_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
-    <div>
-        <header>
-            <Link to="/" className="header-link">
-            </Link>
-        </header>
+    <div className="app-div">
         <Switch>
             <AuthRoute path="/login" component={LogInFormContainer} />
             <AuthRoute path="/signup" component={SignUpFormContainer} />
@@ -29,6 +25,9 @@ const App = () => (
             <Route path="/" component={SessionFormContainer} />
             <Redirect to="/login"/>
         </Switch>
+        <footer className="footer">
+            <h1>This is my footer</h1>
+        </footer>
     </div>
 )
 
