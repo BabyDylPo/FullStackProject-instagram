@@ -15,9 +15,7 @@ class SessionForm extends React.Component {
 
     }
 
-    // componentDidMount() {
-    //     this.props.errors = [];
-    // }
+  
         
 
     update(field) {
@@ -157,10 +155,7 @@ class SessionForm extends React.Component {
                         </div>
                         <div className="session-link-container">
                             <p className="session-question">Don't have an account? </p>
-                            <Link to={{
-                                pathname:"/signup",
-                                state: { errors: {} }
-                                }}
+                            <Link to="/signup"
                                 
                                 className="session-link">Sign Up
 

@@ -14,6 +14,8 @@ class SessionForm extends React.Component {
         this.demoLogin = this.demoLogin.bind(this);
     }
 
+    
+
 
 
     update(field) {

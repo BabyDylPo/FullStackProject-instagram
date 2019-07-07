@@ -14,9 +14,7 @@ class SessionForm extends React.Component {
 
     }
 
-    // componentDidMount() {
-    //     this.props.errors = [];
-    // }
+
 
     update(field) {
         return e => this.setState({
@@ -95,7 +93,7 @@ class SessionForm extends React.Component {
                                 <h2 className="form-description">Sign up to see fake photos and fake videos from your fake friends.</h2>
 
                                 <div className="submit-button-container">
-                                    <button className="submit-button" onClick={this.demoLogin} >Demo Signup</button>
+                                    <button className="submit-button" onClick={this.demoLogin} >Demo</button>
                                 </div>
 
                                 <div className="form-separator">
