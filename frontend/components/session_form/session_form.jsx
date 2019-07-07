@@ -11,7 +11,10 @@ class SessionForm extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
     }
+
+
 
     update(field) {
         return e => this.setState({
@@ -37,14 +40,56 @@ class SessionForm extends React.Component {
         );
     }
 
+    ////////////////////////////////////////////////////////
+    async demoLogin(e) {
+        e.preventDefault();
+
+        // const demoUser = {
+        //     username: 'demoUser',
+        //     email: 'demoUser@aol.com',
+        //     password: 'password'
+        // };
+
+        // const sleep = ms => new Promise(res => setTimeout(res, ms));
+
+        // document.getElementById('username-input').focus();
+        // for (let i = 1; i <= demoUser.username.length; i++) {
+        //     this.setState({ username: demoUser.username.substr(0, i) });
+        //     await sleep(50);
+        // }
+
+        // await sleep(250);
+
+        // document.getElementById('email-input').focus();
+        // for (let i = 1; i <= demoUser.email.length; i++) {
+        //     this.setState({ email: demoUser.email.substr(0, i) });
+        //     await sleep(50);
+        // }
+
+        // await sleep(250);
+
+        // document.getElementById('password-input').focus();
+        // for (let i = 1; i <= demoUser.password.length; i++) {
+        //     this.setState({ password: demoUser.password.substr(0, i) });
+        //     await sleep(50);
+        // }
+
+        // await sleep(250);
+
+        document.getElementById('login-link').click();
+        // document.getElementById('password-input').blur();
+    }
+    ////////////////////////////////////////////////////////////////////
+        //cred goes to michael du
+
     render() {
         return (
             <article className="page-container">
                 <div className="page-container-box">
                     <div className="picture-container">
-                            <img src={window.images.iphone} alt="iphone" className="iphone"/>
+                        <img src={window.images.iphone} alt="iphone" className="iphone"/>
                         <div className="picture-container-picture">
-                            <h3>changing picture goes here</h3>
+                            {/* <    h3>changing picture goes here</h3> */}
                         </div>
                     </div>
                     <div className="form-container">
@@ -54,7 +99,9 @@ class SessionForm extends React.Component {
                                 <h2 className="form-description">Sign up to see fake photos and fake videos from your fake friends.</h2>
                                 
                                 <div className="submit-button-container">
-                                    <input type="submit" value="Demo Login" className="submit-button"/>
+                                    <button type="submit" value="Demo Login" 
+                                    onClick={this.demoLogin}
+                                    className="submit-button">Demo</button>
                                 </div>
                                 
                                 <div className="form-separator">
@@ -72,6 +119,7 @@ class SessionForm extends React.Component {
                                             onChange={this.update('username')}
                                             className="form-input"
                                             placeholder="Username"
+                                                id="username-input"
                                             />
                                         </label>
                                     </div>
@@ -84,6 +132,7 @@ class SessionForm extends React.Component {
                                             onChange={this.update('email')}
                                             className="form-input"
                                             placeholder="Email"
+                                            id="email-input"
                                             />
                                         </label>
                                     </div>
@@ -96,12 +145,13 @@ class SessionForm extends React.Component {
                                             onChange={this.update('password')}
                                             className="form-input"
                                             placeholder="Password"
+                                            id="password-input"
                                             />
                                         </label>
                                     </div>
                                     
                                     <div className="submit-button-container">
-                                        <input className="submit-button" type="submit" value={this.props.formType} />
+                                        <input className="submit-button" type="submit" value="Sign Up" />
                                     </div>
 
                                     <div className="errors-container">
@@ -118,7 +168,7 @@ class SessionForm extends React.Component {
                         </div>
                         <div className="session-link-container">
                             <p className="session-question">Have an account? </p>
-                            <Link to="/login" className="session-link">Log in</Link>
+                            <Link to="/login" id="login-link" className="session-link">Log in</Link>
                         </div>
                         <div className="download-link-container">
                             <p>Get the app.</p>

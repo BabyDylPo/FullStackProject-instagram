@@ -25,9 +25,9 @@ const App = () => (
             <Route path="/" component={SessionFormContainer} />
             <Redirect to="/login"/>
         </Switch>
-        <footer className="footer">
+        {/* <footer className="footer">
             <h1>This is my footer</h1>
-        </footer>
+        </footer> */}
     </div>
 )
 

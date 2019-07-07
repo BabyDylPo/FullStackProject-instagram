@@ -6,21 +6,21 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // let store;
-    // if(window.currentUser) {
-    //     const preloadedState = {
-    //         session: { id: window.currentUser.id },
-    //         entities: {
-    //             users: { [window.currentUser.id]: window.currentUser }
-    //         }
-    //     };
-    //     sotre = configureStore(preloadedState);
-    //     delete window.currentUser;
-    // } else {
-    //     store = configureStore();
-    // }
-    //IF YOU COMMIT THE ABOVE IN, COMMIT THE DIRECTLY BELOW OUT
-    let store = configureStore();
+    let store;
+    if(window.currentUser) {
+        const preloadedState = {
+            session: { id: window.currentUser.id },
+            entities: {
+                users: { [window.currentUser.id]: window.currentUser }
+            }
+        };
+        store = configureStore(preloadedState);
+        delete window.currentUser;
+    } else {
+        store = configureStore();
+    }
+    //IF YOU COMMIT THE ABOVE IN, COMMIT THE DIRECTLY BELOW OUT vis a vis
+    // let store = configureStore();
     window.store = store;
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
