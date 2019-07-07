@@ -37,7 +37,7 @@ const Greeting = ({ currentUser, logout }) => {
                                     </a>
                                 </div>
                                 <div className="nav-sub-element">
-                                    <a href="" className="sub-element-link">
+                                    <a href="" onClick={logout} className="sub-element-link">
                                         <img src={window.images.profile} alt="profile-icon" className="icon" />
                                     </a>
                                 </div>
