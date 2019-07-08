@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  username        :string           not null
+#  email           :string           not null
+#  session_token   :string           not null
+#  password_digest :string           not null
+#  website         :string
+#  bio             :string
+#  display_name    :string
+#  phone_number    :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
     attr_reader :password
 
@@ -13,13 +30,13 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
     #########################  ASSOCIATION  ###############################
-    # has_many: :posts,
-    #     foreign_key: :user_id,
-    #     class_name: :Post
+    has_many: :posts,
+        foreign_key: :user_id,
+        class_name: :Post
 
-    # has_many: :comments,
-    #     foreign_key: :user_id,
-    #     class_name: :Comment
+    has_many: :comments,
+        foreign_key: :user_id,
+        class_name: :Comment
     #######################################################################
 
 after_initialize :ensure_session_token
