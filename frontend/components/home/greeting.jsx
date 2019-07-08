@@ -15,7 +15,6 @@ const Greeting = ({ currentUser, logout }) => {
                 {/* <div></div> */}
                 <div className="nav-container-box">
                     <div className="nav-box">
-                        
                         <div className="home-element">
                             <Link to="/home" id="home-link" className="home-link">
                                 <img src={window.images.logo} alt="logo" className="home-logo"/>
