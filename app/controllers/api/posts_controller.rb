@@ -1,6 +1,6 @@
 class Api::PostsController < ApplicationController
   def index
-    post = User.find(params[:user_id]).post
+    @posts = User.all
     render :index
     # render json: post
   end
@@ -22,6 +22,13 @@ class Api::PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
+
+    if @post.update(post_params)
+      render :show
+    else
+      render json: @post.errors.full_messages, status: 422
+    end
   end
 
   def destroy

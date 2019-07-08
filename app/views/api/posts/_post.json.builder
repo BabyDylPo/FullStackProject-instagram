@@ -1,0 +1,1 @@
+json.extract! bench, :id, :image_url, :caption
