@@ -55,7 +55,7 @@ html {
     background-color: #fafafa;
 }
 //----------------------------------------------//
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 850px) {
     // .iphone {
     //     display: none;
     // }
@@ -87,6 +87,7 @@ html {
 .page-container-box {
     display: flex;
     width: 90%;
+    min-width: 800px;
     margin: 0px auto;
     height: 80%;
     padding: auto;

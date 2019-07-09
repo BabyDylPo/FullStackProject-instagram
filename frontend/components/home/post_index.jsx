@@ -27,16 +27,20 @@ class PostIndex extends Component {
 
     constructor(props){
         super(props);
+        this.users = this.props.users;
     }
     componentDidMount() {
         this.props.fetchPosts();
+        this.props.fetchAllUsers()
     }
 
     render() {
+        console.log(this.props.users);
+        // console.log(this.props.users[this.props.posts[0].userId]);
+        let that = this;
         // const { pokemon, loading } = this.props;
 
         // if (loading) { return <LoadingIcon />; }
-
         return (
             <section className="post-index">
                 {/* <Route
@@ -44,7 +48,13 @@ class PostIndex extends Component {
                     component={PokemonDetailContainer}
                 /> */}
                 <ul>
-                    {this.props.posts.map(post => <PostIndexItem key={post.id} post={post} />)}
+                    {this.props.posts.map(post => 
+                    <PostIndexItem 
+                    key={post.id} 
+                    post={post} 
+                    user={that.props.users[post.userId]}
+                    />
+                    )}
                 </ul>
             </section>
         );

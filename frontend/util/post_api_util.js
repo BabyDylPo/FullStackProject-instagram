@@ -23,3 +23,11 @@ export const createPost = postForm => (
         // processData: false
     })
 );
+
+export const fetchAllUsers = data => (
+    $.ajax({
+        method: 'GET',
+        url: 'api/users',
+        data
+    })
+);

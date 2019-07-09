@@ -26,12 +26,12 @@ const Greeting = ({ currentUser, logout }) => {
                         <div className="nav-element">
                             <div className="nav-element-container">
                                 <div className="nav-sub-element">
-                                    <a href="" className="nav-sub-element-link">
+                                    <a href="/#/home" className="nav-sub-element-link">
                                         <img src={window.images.compass} alt="compass-icon" className="icon" />
                                     </a>
                                 </div>
                                 <div className="nav-sub-element">
-                                    <a href="" className="nav-sub-element-link">
+                                    <a href="/#/home" className="nav-sub-element-link">
                                         <img src={window.images.heart} alt="heart-icon" className="icon" />
                                     </a>
                                 </div>

@@ -1,14 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PostIndexItem = ({ post }) => (
+const PostIndexItem = ({ post, user }) => (
     <li className="post-index-item">
         {/* <Link to={`/posts/${post.id}`}>
             
         </Link> */}
-        <span>{post.id}</span>
+        <div className="post-header">
+            {user ? user.username : ""}
+        </div>
+
         <img className="post-photo" src={post.photourl} alt={post.id} />
-        <span className="post-caption">{post.caption}</span>
+
+        <div className="post-caption">
+            <span className="username-caption">
+                {user ? user.username : ""}
+            </span>
+            <span className="caption-content">
+                {post.caption}
+            </span>
+        </div>
     </li>
 );
 

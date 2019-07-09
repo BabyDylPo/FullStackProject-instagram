@@ -1,5 +1,5 @@
-export const asArray = ( {posts} ) => {
+export const asArray = ( object ) => {
     return(
-        Object.keys(posts).map(key => posts[key])
+        Object.keys(object).map(key => object[key])
     )
 };
