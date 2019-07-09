@@ -3,9 +3,9 @@ import * as APIUtil from '../util/post_api_util';
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const RECEIVE_POST = 'RECEIVE_POST';
 
-export const receivePosts = posts => ({
+export const receivePosts = payload => ({
     type: RECEIVE_POSTS,
-    posts,
+    payload,
 });
 
 export const receivePost = ({ post, caption, user_id }) => ({
@@ -18,8 +18,8 @@ export const receivePost = ({ post, caption, user_id }) => ({
 //////////////////////////////////////////////////////////////
 
 
-export const fetchPosts = filters => dispatch => (
-    APIUtil.fetchPosts(filters).then(posts => (
+export const fetchPosts = posts => dispatch => (
+    APIUtil.fetchPosts(posts).then(posts => (
         dispatch(receivePosts(posts))
     ))
 );

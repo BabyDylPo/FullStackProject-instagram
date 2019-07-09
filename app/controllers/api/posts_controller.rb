@@ -1,6 +1,6 @@
 class Api::PostsController < ApplicationController
   def index
-    @posts = User.all
+    @posts = Post.all
     render :index
     # render json: post
   end

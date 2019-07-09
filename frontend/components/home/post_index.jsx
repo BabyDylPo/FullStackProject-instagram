@@ -24,8 +24,12 @@ import { Route } from 'react-router-dom';
 import PostIndexItem from './post_index_item';
 
 class PostIndex extends Component {
+
+    constructor(props){
+        super(props);
+    }
     componentDidMount() {
-        this.props.requestAllPosts();
+        this.props.fetchPosts();
     }
 
     render() {
@@ -40,7 +44,7 @@ class PostIndex extends Component {
                     component={PokemonDetailContainer}
                 /> */}
                 <ul>
-                    {posts.map(post => <PostIndexItem key={post.id} posts={post} />)}
+                    {this.props.posts.map(post => <PostIndexItem key={post.id} post={post} />)}
                 </ul>
             </section>
         );

@@ -5,9 +5,8 @@ import { fetchPosts, fetchPost, createPost } from '../../actions/post_actions';
 import { asArray } from '../../reducers/selectors';
 
 const mapStateToProps = state => {
-    debugger
     return({
-        posts: asArray(state),
+        posts: asArray(state.entities),
     });
 };
 

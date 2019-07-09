@@ -11,5 +11,8 @@ User.create!({ username: 'demoUser', email: 'demoUser@aol.com', password: 'passw
 
 users = User.all
 users.each do |user|
-    Post.create!(user_id: user.id, image_url: "test photo", caption: "Felt cute, might delete later")
+    post_a = Post.create!(user_id: user.id, image_url: "test photo", caption: "Felt cute, might delete later")
+    post_a.photo.attach(io: File.open("/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/test-picture.png"), filename: "test-picture.png")
+    post_b = Post.create!(user_id: user.id, image_url: "test photo", caption: "Throwback Tuesday")
+    post_b.photo.attach(io: File.open("/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/civ-screen.png"), filename: "civ-screen.png")
 end
