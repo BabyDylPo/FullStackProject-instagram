@@ -25,6 +25,7 @@
     display: flex;
     flex-direction: row;
     height: 29px;
+    align-content: center;
     justify-content: center;
     // max-width: 1010px;
     padding: 24px 20px;
@@ -33,7 +34,7 @@
 
 .nav-element{ 
     min-width: 40px;
-    max-width: 33%;
+    // max-width: 33%;
     max-height: 29px;
     margin: 0 auto;
     display: flex;
@@ -57,7 +58,7 @@
 .home-element {
     // max-width: 200px;
     // max-width: 33%;
-    // margin: 0 auto;
+    margin: 0 auto;
     min-width: 40px;
     flex: 1 9999 0%;
 }
@@ -104,18 +105,21 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    margin-left: 29px;
 }
 
 .nav-sub-element-link{
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 24px;
+    max-height: 24px;
+    min-width: 24px;
+    min-height: 24px;
 }
 
 .icon{
-    max-width: 100%;
-    max-height: 100%;
-    max-height: 29px;
-
+    max-width: 24px;
+    max-height: 24px;
+    min-width: 24px;
+    min-height: 24px;
 }
 
 .sub-element-link{
