@@ -8,3 +8,8 @@
 User.destroy_all
 
 User.create!({ username: 'demoUser', email: 'demoUser@aol.com', password: 'password'})
+
+users = User.all
+users.each do |user|
+    Post.create!(user_id: user.id, image_url: "test photo", caption: "Felt cute, might delete later")
+end

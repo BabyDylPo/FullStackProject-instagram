@@ -34,6 +34,8 @@ class Post < ApplicationRecord
     foreign_key: :post_id,
     class_name: :Comment
 
+  has_one_attached :photo
+
   def caption_to_long
     if caption && caption.length > 140
       errors[:caption] << "too long"

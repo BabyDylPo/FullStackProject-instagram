@@ -12,7 +12,7 @@ import {
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import SessionFormContainer from './session_form/session_form_container';
-import GreetingContainer from '../components/home/greeting_container';
+import Home from '../components/home/home';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -21,7 +21,7 @@ const App = () => (
         <Switch>
             <AuthRoute path="/login" component={LogInFormContainer} />
             <AuthRoute path="/signup" component={SignUpFormContainer} />
-            <ProtectedRoute path="/home" component={GreetingContainer} />
+            <ProtectedRoute path="/home" component={Home} />
             <Route path="/" component={SessionFormContainer} />
             <Redirect to="/login"/>
         </Switch>
