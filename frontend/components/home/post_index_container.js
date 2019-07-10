@@ -7,7 +7,7 @@ import { asArray } from '../../reducers/selectors';
 
 const mapStateToProps = state => {
     return({
-        posts: asArray(state.entities.posts),
+        posts: asArray(state.entities.posts).reverse(),
         users: state.entities.users
     });
 };

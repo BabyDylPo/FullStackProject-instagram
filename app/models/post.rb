@@ -37,7 +37,7 @@ class Post < ApplicationRecord
   has_one_attached :photo
 
   def caption_to_long
-    if caption && caption.length > 140
+    if caption && caption.length > 10000
       errors[:caption] << "too long"
     end
   end

@@ -5,6 +5,7 @@ import { RECEIVE_POSTS, RECEIVE_POST } from '../../actions/post_actions';
 //import post and comment actions here
 
 const postsReducer = (state = {}, action) => {
+    
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_POSTS:

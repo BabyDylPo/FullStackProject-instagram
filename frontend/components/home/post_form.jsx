@@ -6,13 +6,26 @@ class PostForm extends React.Component {
         super(props);
         this.state = {
             caption: "",
+            photoFile: null,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFile = this.handleFile.bind(this);
     }
 
 
     handleSubmit(e) {
-        
+      let that = this;
+      e.preventDefault();
+      const formData = new FormData();
+      formData.append('post[caption]', that.state.caption);
+      formData.append('post[photo]', that.state.photoFile);
+      // formData.append('post[userId]', that.state.userId);
+      this.props.createPost(formData);
+      // .then(result => this.props.history.push)
+    }
+
+    handleFile(e) {
+      this.setState({photoFile: e.currentTarget.files[0]});
     }
 
     update(property) {
@@ -22,17 +35,18 @@ class PostForm extends React.Component {
     render() {
       return (
         <div>
-          <form className="post-form" onSubmit={this.handleSubmit.bind(this)}>
+          <form className="post-form" onSubmit={this.handleSubmit}>
           <label>Caption</label>
             <input type="text" 
-            id=""
+            id="post-caption"
             value={this.state.caption}
             onChange={this.update("caption")}/>
-            <button>Make a new Post!</button>
+            <input type="file" onChange={this.handleFile}/>
+            <input type="submit" value="Make a new Post!"/>
           </form>
         </div> 
       );
     }
 }
 
-export default withRouter(ReviewForm);
+export default withRouter(PostForm);

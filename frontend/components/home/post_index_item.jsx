@@ -11,7 +11,6 @@ const PostIndexItem = ({ post, user }) => (
         </div>
 
         <img className="post-photo" src={post.photourl} alt={post.id} />
-
         <div className="post-caption">
             <span className="username-caption">
                 {user ? user.username : ""}

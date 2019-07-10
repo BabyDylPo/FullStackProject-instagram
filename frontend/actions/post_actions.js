@@ -8,12 +8,24 @@ export const receivePosts = payload => ({
     payload,
 });
 
-export const receivePost = ({ post, caption, user_id }) => ({
-    type: RECEIVE_POST,
-    post,
-    caption,
-    user_id,
-});
+// export const receivePost = ({ post, caption, user_id }) => {
+//     
+//     return({
+//         type: RECEIVE_POST,
+//         post,
+//         caption,
+//         user_id,
+//     })
+    
+// };
+export const receivePost = (post) => {
+    
+    return({
+        type: RECEIVE_POST,
+        post,
+    })
+    
+};
 
 //////////////////////////////////////////////////////////////
 
@@ -30,8 +42,12 @@ export const fetchPost = id => dispatch => (
     ))
 );
 
-export const createPost = post => dispatch => (
-    APIUtil.createPost(post).then(post => (
-        dispatch(receivePost(post))
-    ))
-);
+export const createPost = post => dispatch => {
+    
+    return(
+        APIUtil.createPost(post).then(post => (
+            dispatch(receivePost(post))
+        ))
+    )
+    
+};

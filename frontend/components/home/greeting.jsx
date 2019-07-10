@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PostFormContainer from './post_form_container';
 
 const Greeting = ({ currentUser, logout }) => {
     const sessionLinks = () => (
@@ -16,12 +17,16 @@ const Greeting = ({ currentUser, logout }) => {
                 <div className="nav-container-box">
                     <div className="nav-box">
                         <div className="home-element">
+                            <img src={window.images.camera} alt="camera-icon" className="camera-icon" />
+                            <div className="separator-decoration"></div>
                             <Link to="/home" id="home-link" className="home-link">
+                                
                                 <img src={window.images.logo} alt="logo" className="home-logo"/>
                             </Link>
                         </div>
                         <div className="search-element">
-                            <input type="text" className="nav-search" placeholder="search"/>
+                            {/* <input type="text" className="nav-search" placeholder="search"/> */}
+                            <PostFormContainer />
                         </div>
                         <div className="nav-element">
                             <div className="nav-element-container">
