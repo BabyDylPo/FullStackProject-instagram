@@ -4,6 +4,7 @@ import PostIndex from './post_index';
 import { fetchPosts, fetchPost, createPost, deletePost } from '../../actions/post_actions';
 import { fetchAllUsers } from '../../actions/user_actions';
 import { asArray } from '../../reducers/selectors';
+import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = state => {
     return({
@@ -19,7 +20,8 @@ const mapDispatchToProps = dispatch => {
       fetchPost: () => dispatch(fetchPost()),
       createPost: () => dispatch(createPost()),
       fetchAllUsers: () => dispatch(fetchAllUsers()),
-      deletePost: id => dispatch(deletePost(id))
+      deletePost: id => dispatch(deletePost(id)),
+      openModal: modal => dispatch(openModal(modal))
   })
 };
 

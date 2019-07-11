@@ -4,6 +4,7 @@ import { openModal } from '../../actions/modal_actions';
 
 
 const Greeting = ({ currentUser, logout, openModal }) => {
+    
     const sessionLinks = () => (
         <nav>
             <Link to="/login">Login</Link>
@@ -20,7 +21,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
                         <div className="home-element">
                             <button onClick={() => openModal('postForm')} className="post-form-link" > 
                                 <img src={window.images.camera} alt="camera-icon" className="camera-icon" />
-                           </button>
+                            </button>
                             <div className="separator-decoration"></div>
                             <Link to="/home" id="home-link" className="home-link">
                                 

@@ -28,25 +28,29 @@ class PostIndex extends Component {
     constructor(props){
         super(props);
         this.users = this.props.users;
-        
     }
     componentDidMount() {
         this.props.fetchPosts();
-        this.props.fetchAllUsers()
-    }
-    componentDidUpdate(){
-        
+        this.props.fetchAllUsers();
+        // document.addEventListener('scroll', this.trackScrolling);
     }
 
+    // trackScrolling(){
+    //     const wrappedElement = document.getElementsByClassName('post-index');
+    //     if (wrappedElement.scrollHeight - wrappedElement.scrollTop === wrappedElement.clientHeight - 10) {
+    //         console.log('post index bottom reached');
+    //         document.removeEventListener('scroll', this.trackScrolling);
+    //     }
+    // };
+
     render() {
-        console.log(this.props.users);
+        // console.log(this.props.users);
         // console.log(this.props.users[this.props.posts[0].userId]);
         let that = this;
         // const { pokemon, loading } = this.props;
-
         // if (loading) { return <LoadingIcon />; }
         return (
-            <section className="post-index">
+            <div className="post-index">
                 {/* <Route
                     path="/pokemon/:pokemonId"
                     component={PokemonDetailContainer}
@@ -58,10 +62,11 @@ class PostIndex extends Component {
                     post={post} 
                     user={that.props.users[post.userId]}
                     deletePost={(post.userId === that.props.currentUser.id) ? that.props.deletePost : null}
+                    openModal={(post.userId === that.props.currentUser.id) ? that.props.openModal : null}
                     />
                     )}
                 </ul>
-            </section>
+            </div>
         );
     }
 }

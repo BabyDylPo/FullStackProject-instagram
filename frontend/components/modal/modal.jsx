@@ -12,9 +12,14 @@ function Modal({ modal, closeModal }) {
         case 'postForm':
             component = <PostFormContainer />;
             break;
+        case 'editForm':
+            component = <EditFormContainer />;
+            break;
         default:
             return null;
     }
+    
+
     return (
         <div className="modal-background" onClick={closeModal}>
             <div className="modal-child" onClick={e => e.stopPropagation()}>
