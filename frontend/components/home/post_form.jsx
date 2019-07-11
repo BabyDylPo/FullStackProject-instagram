@@ -1,6 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+document.onkeypress = function (e) {
+  e = e || window.event;
+  if (e.keyCode === "escape"){
+    this.props.closeModal();
+  }
+};
+
 class PostForm extends React.Component {
     constructor(props) {
         super(props);
@@ -42,25 +49,35 @@ class PostForm extends React.Component {
         return e => this.setState({ [property]: e.currentTarget.value });
     }
 
-    
+    // keyPress(e) {
+    // if (e.key === "Escape") {
+    // // write your logic here.
+    //   this.props.closeModal();
+    // }
+    // }
+  
+  
 
     render() {
       const preview = this.state.photoUrl ? <img src={this.state.photoUrl} className="photo"/> : null;
       return (
-        <div>
+        <div className="post-form-container">
           <form className="post-form" onSubmit={this.handleSubmit}>
-          <label>Caption</label>
-            <input type="text" 
-            id="post-caption"
-            value={this.state.caption}
-            onChange={this.update("caption")}/>
-            <input type="file" onChange={this.handleFile}/>
-            <div className="button-div" >
-              <input type="submit" value="Make a new Post!"/>
+            <div className="post-form-actions">
+              <button onClick={this.props.closeModal} className="exit-modal">X</button>
+              <input type="submit" value="Post!" className="submit-post-form"/>
             </div>
             <div className="photo-preview">
               {preview}
             </div>
+            <div className="file-selector-div" >
+              <input type="file" onChange={this.handleFile} className="file-selector"/>
+            </div>
+            <input type="text" 
+            className="post-caption"
+            value={this.state.caption}
+            onChange={this.update("caption")}
+            placeholder="Caption"/>
           </form>
         </div> 
       );

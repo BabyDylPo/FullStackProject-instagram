@@ -1,13 +1,45 @@
 // Place all the styles related to the Api::Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+.post-form-container{
+    width: 420px;
+    height: 540px;
+    border: 1px solid #000
+    
+}
+.post-form{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+.post-form-actions{
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+.exit-modal{
+    margin: 19px auto 0 27px;
+}
+.submit-post-form{
+    margin: 19px 27px 0 auto;
+}
+.post-caption{
+    margin: 0 30px 0 30px;
+}
 .post-index{
     margin-top: 77px;
     display: flex;
     flex-direction: column;
     align-content: center;
    
+}
+
+.file-selector-div{
+    display: flex;
+    align-content: center;
+}
+.file-selector{
+    margin: 0 auto;
 }
 
 .post-index-item{
@@ -70,10 +102,10 @@
 }
 
 .photo-preview{
-    width: 400px;
-    height: 400px;
+    // width: 400px;
+    height: 401px;
     display: flex;
-    justify-content: center;
+    align-content: center;
 }
 
 .photo{
