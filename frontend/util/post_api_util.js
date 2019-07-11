@@ -13,7 +13,6 @@ export const fetchPost = id => (
     })
 );
 
-
 export const createPost = postForm => (
     $.ajax({
         method: 'POST',
@@ -21,6 +20,13 @@ export const createPost = postForm => (
         data: postForm,
         contentType: false,
         processData: false
+    })
+);
+
+export const deletePost = id => (
+    $.ajax({
+        url: `api/posts/${id}`,
+        method: 'DELETE'
     })
 );
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PostFormContainer from './post_form_container';
+import { openModal } from '../../actions/modal_actions';
 
-const Greeting = ({ currentUser, logout }) => {
+
+const Greeting = ({ currentUser, logout, openModal }) => {
     const sessionLinks = () => (
         <nav>
             <Link to="/login">Login</Link>
@@ -17,7 +18,9 @@ const Greeting = ({ currentUser, logout }) => {
                 <div className="nav-container-box">
                     <div className="nav-box">
                         <div className="home-element">
-                            <img src={window.images.camera} alt="camera-icon" className="camera-icon" />
+                            <button onClick={() => openModal('postForm')} className="post-form-link" > 
+                                <img src={window.images.camera} alt="camera-icon" className="camera-icon" />
+                           </button>
                             <div className="separator-decoration"></div>
                             <Link to="/home" id="home-link" className="home-link">
                                 
@@ -25,8 +28,8 @@ const Greeting = ({ currentUser, logout }) => {
                             </Link>
                         </div>
                         <div className="search-element">
-                            {/* <input type="text" className="nav-search" placeholder="search"/> */}
-                            <PostFormContainer />
+                            <input type="text" className="nav-search" placeholder="search"/>
+                            
                         </div>
                         <div className="nav-element">
                             <div className="nav-element-container">

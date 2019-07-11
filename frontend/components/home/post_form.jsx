@@ -7,9 +7,11 @@ class PostForm extends React.Component {
         this.state = {
             caption: "",
             photoFile: null,
+            photoUrl: null
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
+        // this.closeModal = this.props.closeModal.bind(this);
     }
 
 
@@ -21,18 +23,29 @@ class PostForm extends React.Component {
       formData.append('post[photo]', that.state.photoFile);
       // formData.append('post[userId]', that.state.userId);
       this.props.createPost(formData);
-      // .then(result => this.props.history.push)
+      this.props.closeModal();
+    
     }
 
     handleFile(e) {
-      this.setState({photoFile: e.currentTarget.files[0]});
+      const file = e.currentTarget.files[0];
+      const fileReader = new FileReader();
+      fileReader.onloadend = () => {
+        this.setState({photoFile: file, photoUrl: fileReader.result});
+      };
+      if (file) {
+        fileReader.readAsDataURL(file);
+      }
     }
 
     update(property) {
         return e => this.setState({ [property]: e.currentTarget.value });
     }
 
+    
+
     render() {
+      const preview = this.state.photoUrl ? <img src={this.state.photoUrl} className="photo"/> : null;
       return (
         <div>
           <form className="post-form" onSubmit={this.handleSubmit}>
@@ -42,7 +55,12 @@ class PostForm extends React.Component {
             value={this.state.caption}
             onChange={this.update("caption")}/>
             <input type="file" onChange={this.handleFile}/>
-            <input type="submit" value="Make a new Post!"/>
+            <div className="button-div" >
+              <input type="submit" value="Make a new Post!"/>
+            </div>
+            <div className="photo-preview">
+              {preview}
+            </div>
           </form>
         </div> 
       );

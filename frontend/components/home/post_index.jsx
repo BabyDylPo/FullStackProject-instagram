@@ -57,6 +57,7 @@ class PostIndex extends Component {
                     key={post.id} 
                     post={post} 
                     user={that.props.users[post.userId]}
+                    deletePost={(post.userId === that.props.currentUser.id) ? that.props.deletePost : null}
                     />
                     )}
                 </ul>
