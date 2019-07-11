@@ -10,46 +10,46 @@
 User.destroy_all
 
 pictures = [
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/black-cat.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/dog-door.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/gun-leg.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/matrix.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/scott.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/spellling.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/tanner.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/wizard-apprentice.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/14th-P.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/black-cat-2.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/deer.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/donny.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/ego.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/happy-cat.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/skater-ellie.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/son-of-sam.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/stable-cat.png"
+    "s3://finstagram-storage-dev/4LXsHLa2ksxN1nFk42uinKJr",
+    "s3://finstagram-storage-dev/5V6jNrMj6EiC9hTCcjfv8Q2M",
+    "s3://finstagram-storage-dev/6RiKae2vv8Hy31A1Tx43YPjW",
+    "s3://finstagram-storage-dev/7oVmvcVE8pDfxQQhMMRd5vCJ",
+    "s3://finstagram-storage-dev/9DXmEvi68w1zqyJM8d5Gf6Ka",
+    "s3://finstagram-storage-dev/AydS6vRknBrDXsKk1hacfeiS",
+    "s3://finstagram-storage-dev/BGmnJqpW5bsdhBv2kAtj9VJD",
+    "s3://finstagram-storage-dev/Dvk8NzR7UitkfXmkxHEghnXM",
+    "s3://finstagram-storage-dev/GarPRDttkgSmvBsx3EgVohso",
+    "s3://finstagram-storage-dev/LJv81Xftz879Srqg7q6t9437",
+    "s3://finstagram-storage-dev/LgDAvTu118XmbiLe52hqhG8j",
+    "s3://finstagram-storage-dev/MR66ha8djNes7qhgXqBsHBCf",
+    "s3://finstagram-storage-dev/PHABtbbZamfx4FQppoh7fTBD",
+    "s3://finstagram-storage-dev/PrJeMmLWE1j98A7C1JDZgkNo",
+    "s3://finstagram-storage-dev/Qc6uuzJ4oQD14v67jMGoUJCq",
+    "s3://finstagram-storage-dev/WoYjybBAzjAyucMNgNs8MeZg",
+    "s3://finstagram-storage-dev/XEtd7ewMxnBc1QQVqSc7QvgC"
 ]
 
 dylpo_pictures = [
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/bbdyl-devin.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/deer-painting.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/dylpo-painting.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/dylpo-selfie.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/oak-park.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/park-city-patrol.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/self.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/waterfall.png"
+    "s3://finstagram-storage-dev/bWUmzFfnEetd95Mz7eT5r3SF",
+    "s3://finstagram-storage-dev/hTjyUzVtDczcj3JQB7X7JGy6",
+    "s3://finstagram-storage-dev/iHfELRPVq27DgNazj7RUaEfp",
+    "s3://finstagram-storage-dev/jCgZpgEqQJKwM1rbfo2dbdts",
+    "s3://finstagram-storage-dev/jyoA93x2QVUYzdpuMCXjAAiy",
+    "s3://finstagram-storage-dev/kwavFGJUkpUpy2fNt84utGWJ",
+    "s3://finstagram-storage-dev/oHegsCC5E8mj3QYs7HwvbezH",
+    "s3://finstagram-storage-dev/zHmjxqQARL25pXBf6Mkswgi4"
 ]
 
 silk_pictures = [
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/babies.jpg",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/blood-babe.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/burning-world.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/burning-world.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/crystal-quing.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/date-night.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/peace-ocean.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/baby-cat.png",
-    "/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/silk-selfie.png"
+    "s3://finstagram-storage-dev/qXiA2ZAPW2T3mB3XVpEKqkYQ",
+    "s3://finstagram-storage-dev/rnsT4BsoXz7tjKKM6KnijjAX",
+    "s3://finstagram-storage-dev/rph9XjqxiLzkZms8C1CQWFQp",
+    "s3://finstagram-storage-dev/sAoiqtVEPUAYfum6hhZRpQFf",
+    "s3://finstagram-storage-dev/tWnuurm4sN1GkifBFiwtNbiy",
+    "s3://finstagram-storage-dev/tecpGKq1BsjQNHewAwCxaT1n",
+    "s3://finstagram-storage-dev/vmCQWVsGDeZ1CrGYk5V8LbJd",
+    "s3://finstagram-storage-dev/wM8Etm9g24xdc65ZMwKZCmPV",
+    "s3://finstagram-storage-dev/ynzKyyhEkWy252aPWros3RWV"
 ]
 
 users = [
