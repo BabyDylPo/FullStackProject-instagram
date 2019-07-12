@@ -10,46 +10,47 @@
 User.destroy_all
 
 pictures = [
-    "s3://finstagram-storage-dev/4LXsHLa2ksxN1nFk42uinKJr",
-    "s3://finstagram-storage-dev/5V6jNrMj6EiC9hTCcjfv8Q2M",
-    "s3://finstagram-storage-dev/6RiKae2vv8Hy31A1Tx43YPjW",
-    "s3://finstagram-storage-dev/7oVmvcVE8pDfxQQhMMRd5vCJ",
-    "s3://finstagram-storage-dev/9DXmEvi68w1zqyJM8d5Gf6Ka",
-    "s3://finstagram-storage-dev/AydS6vRknBrDXsKk1hacfeiS",
-    "s3://finstagram-storage-dev/BGmnJqpW5bsdhBv2kAtj9VJD",
-    "s3://finstagram-storage-dev/Dvk8NzR7UitkfXmkxHEghnXM",
-    "s3://finstagram-storage-dev/GarPRDttkgSmvBsx3EgVohso",
-    "s3://finstagram-storage-dev/LJv81Xftz879Srqg7q6t9437",
-    "s3://finstagram-storage-dev/LgDAvTu118XmbiLe52hqhG8j",
-    "s3://finstagram-storage-dev/MR66ha8djNes7qhgXqBsHBCf",
-    "s3://finstagram-storage-dev/PHABtbbZamfx4FQppoh7fTBD",
-    "s3://finstagram-storage-dev/PrJeMmLWE1j98A7C1JDZgkNo",
-    "s3://finstagram-storage-dev/Qc6uuzJ4oQD14v67jMGoUJCq",
-    "s3://finstagram-storage-dev/WoYjybBAzjAyucMNgNs8MeZg",
-    "s3://finstagram-storage-dev/XEtd7ewMxnBc1QQVqSc7QvgC"
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/zHmjxqQARL25pXBf6Mkswgi4",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/ynzKyyhEkWy252aPWros3RWV",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/wM8Etm9g24xdc65ZMwKZCmPV",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/vmCQWVsGDeZ1CrGYk5V8LbJd",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/tecpGKq1BsjQNHewAwCxaT1n",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/tWnuurm4sN1GkifBFiwtNbiy",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/sAoiqtVEPUAYfum6hhZRpQFf",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/rph9XjqxiLzkZms8C1CQWFQp",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/rnsT4BsoXz7tjKKM6KnijjAX",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/qXiA2ZAPW2T3mB3XVpEKqkYQ",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/oXMTPuCxmqpKwWbgk4Axj1uS",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/oHegsCC5E8mj3QYs7HwvbezH",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/kwavFGJUkpUpy2fNt84utGWJ",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/jyoA93x2QVUYzdpuMCXjAAiy",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/jCgZpgEqQJKwM1rbfo2dbdts",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/iHfELRPVq27DgNazj7RUaEfp",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/hTjyUzVtDczcj3JQB7X7JGy6",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/bWUmzFfnEetd95Mz7eT5r3SF"
 ]
 
 dylpo_pictures = [
-    "s3://finstagram-storage-dev/bWUmzFfnEetd95Mz7eT5r3SF",
-    "s3://finstagram-storage-dev/hTjyUzVtDczcj3JQB7X7JGy6",
-    "s3://finstagram-storage-dev/iHfELRPVq27DgNazj7RUaEfp",
-    "s3://finstagram-storage-dev/jCgZpgEqQJKwM1rbfo2dbdts",
-    "s3://finstagram-storage-dev/jyoA93x2QVUYzdpuMCXjAAiy",
-    "s3://finstagram-storage-dev/kwavFGJUkpUpy2fNt84utGWJ",
-    "s3://finstagram-storage-dev/oHegsCC5E8mj3QYs7HwvbezH",
-    "s3://finstagram-storage-dev/zHmjxqQARL25pXBf6Mkswgi4"
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/XEtd7ewMxnBc1QQVqSc7QvgC",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/WoYjybBAzjAyucMNgNs8MeZg",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/Qc6uuzJ4oQD14v67jMGoUJCq",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/PrJeMmLWE1j98A7C1JDZgkNo",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/PHABtbbZamfx4FQppoh7fTBD",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/MR66ha8djNes7qhgXqBsHBCf",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/LgDAvTu118XmbiLe52hqhG8j",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/LJv81Xftz879Srqg7q6t9437"
 ]
 
 silk_pictures = [
-    "s3://finstagram-storage-dev/qXiA2ZAPW2T3mB3XVpEKqkYQ",
-    "s3://finstagram-storage-dev/rnsT4BsoXz7tjKKM6KnijjAX",
-    "s3://finstagram-storage-dev/rph9XjqxiLzkZms8C1CQWFQp",
-    "s3://finstagram-storage-dev/sAoiqtVEPUAYfum6hhZRpQFf",
-    "s3://finstagram-storage-dev/tWnuurm4sN1GkifBFiwtNbiy",
-    "s3://finstagram-storage-dev/tecpGKq1BsjQNHewAwCxaT1n",
-    "s3://finstagram-storage-dev/vmCQWVsGDeZ1CrGYk5V8LbJd",
-    "s3://finstagram-storage-dev/wM8Etm9g24xdc65ZMwKZCmPV",
-    "s3://finstagram-storage-dev/ynzKyyhEkWy252aPWros3RWV"
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/GarPRDttkgSmvBsx3EgVohso",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/Dvk8NzR7UitkfXmkxHEghnXM",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/BGmnJqpW5bsdhBv2kAtj9VJD",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/AydS6vRknBrDXsKk1hacfeiS",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/9DXmEvi68w1zqyJM8d5Gf6Ka",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/7oVmvcVE8pDfxQQhMMRd5vCJ",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/6RiKae2vv8Hy31A1Tx43YPjW",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/5V6jNrMj6EiC9hTCcjfv8Q2M",
+    "https://finstagram-storage-dev.s3-us-west-1.amazonaws.com/4LXsHLa2ksxN1nFk42uinKJr"
 ]
 
 users = [
@@ -65,7 +66,7 @@ silk_pictures.shuffle!
 (0...pictures.length).each do |i|
     url = pictures[i]
     user = users.shuffle!.first
-    filename = url.split("images/").last.split(".png").first
+    filename = url.split("com/").last
     sentence = Faker::Movies::HitchhikersGuideToTheGalaxy.unique.quote
     post = Post.create!(user_id: user.id, 
                         image_url: filename, 
@@ -76,7 +77,7 @@ end
 (0...dylpo_pictures.length).each do |i|
     url = dylpo_pictures[i]
     user = User.find_by(username: "bbdylpo")
-    filename = url.split("images/").last.split(".png").first
+    filename = url.split("com/").last
     sentence = Faker::Movies::VForVendetta.unique.quote
     post = Post.create!(user_id: user.id, 
                         image_url: filename, 
@@ -87,7 +88,7 @@ end
 (0...silk_pictures.length).each do |i|
     url = silk_pictures[i]
     user = User.find_by(username: "silk")
-    filename = url.split("images/").last.split(".png").first
+    filename = url.split("com/").last
     sentence = Faker::TvShows::TwinPeaks.unique.quote
     post = Post.create!(user_id: user.id, 
                         image_url: filename, 
