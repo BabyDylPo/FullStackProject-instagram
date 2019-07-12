@@ -52,6 +52,7 @@ You can log in as an existing fake demoUser to enjoy all the fake features while
 * Comment Likes
 * Explore
 * Real-time notifications
+
 [signup]: https://github.com/BabyDylPo/FullStackProject-instagram/blob/master/app/assets/images/ReadMeImages/signup_demo.png 
 [demologin]: https://github.com/BabyDylPo/FullStackProject-instagram/blob/master/app/assets/images/ReadMeImages/login_demo.png
 [features]: https://github.com/BabyDylPo/FullStackProject-instagram/blob/master/app/assets/images/ReadMeImages/features.png
