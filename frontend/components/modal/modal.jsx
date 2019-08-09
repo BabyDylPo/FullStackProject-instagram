@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import PostFormContainer from '../home/post_form_container';
+import EditFormContainer from '../home/edit_form_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {

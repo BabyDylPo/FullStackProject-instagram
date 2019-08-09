@@ -101,36 +101,3 @@ end
                         caption: sentence)
     post.photo.attach(io: open(url), filename: filename)
 end
-
-# User.create!({ username: 'demoUser', email: 'demoUser@aol.com', password: 'password'})
-# User.create!({ username: 'bbdylpo', email: 'dylan@dylan.com', password: 'password'})
-# User.create!({ username: 'silk', email: 'bella@hotmail.com', password: 'password'})
-
-# users = User.all
-# users.each do |user|
-#     post_a = Post.create!(user_id: user.id, image_url: "test photo", caption: "Felt cute, might delete later")
-#     post_a.photo.attach(io: File.open("/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/test-picture.png"), filename: "test-picture.png")
-#     post_b = Post.create!(user_id: user.id, image_url: "test photo", caption: "Throwback Tuesday")
-#     post_b.photo.attach(io: File.open("/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/civ-screen.png"), filename: "civ-screen.png")
-# end
-
-# post_a = Post.create!(user_id: user.id, image_url: "test photo", caption: "Felt cute, might delete later")
-# post_a.photo.attach(io: File.open("/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/test-picture.png"), filename: "test-picture.png")
-# post_b = Post.create!(user_id: user.id, image_url: "test photo", caption: "Felt cute, might delete later")
-# post_b.photo.attach(io: File.open("/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/test-picture.png"), filename: "test-picture.png")
-# post_c = Post.create!(user_id: user.id, image_url: "test photo", caption: "Felt cute, might delete later")
-# post_c.photo.attach(io: File.open("/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/test-picture.png"), filename: "test-picture.png")
-# post_d = Post.create!(user_id: user.id, image_url: "test photo", caption: "Felt cute, might delete later")
-# post_d.photo.attach(io: File.open("/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/test-picture.png"), filename: "test-picture.png")
-# post_e = Post.create!(user_id: user.id, image_url: "test photo", caption: "Felt cute, might delete later")
-# post_e.photo.attach(io: File.open("/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/test-picture.png"), filename: "test-picture.png")
-# post_f = Post.create!(user_id: user.id, image_url: "test photo", caption: "Felt cute, might delete later")
-# post_f.photo.attach(io: File.open("/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/test-picture.png"), filename: "test-picture.png")
-# post_g = Post.create!(user_id: user.id, image_url: "test photo", caption: "Felt cute, might delete later")
-# post_g.photo.attach(io: File.open("/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/test-picture.png"), filename: "test-picture.png")
-# post_h = Post.create!(user_id: user.id, image_url: "test photo", caption: "Felt cute, might delete later")
-# post_h.photo.attach(io: File.open("/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/test-picture.png"), filename: "test-picture.png")
-# post_i = Post.create!(user_id: user.id, image_url: "test photo", caption: "Felt cute, might delete later")
-# post_i.photo.attach(io: File.open("/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/test-picture.png"), filename: "test-picture.png")
-# post_j = Post.create!(user_id: user.id, image_url: "test photo", caption: "Felt cute, might delete later")
-# post_j.photo.attach(io: File.open("/Users/dylpo/Desktop/FullStackProject/Finstagram/app/assets/images/test-picture.png"), filename: "test-picture.png")

@@ -10,14 +10,15 @@ const mapStateToProps = state => {
     return({
         posts: asArray(state.entities.posts).reverse(),
         users: state.entities.users,
-        currentUser: state.entities.users[state.session.id]
+        currentUser: state.entities.users[state.session.id],
+        targetPost: state.entities.targetPost
     });
 };
 
 const mapDispatchToProps = dispatch => {
   return({
       fetchPosts: () => dispatch(fetchPosts()),
-      fetchPost: () => dispatch(fetchPost()),
+      fetchPost: id => dispatch(fetchPost(id)),
       createPost: () => dispatch(createPost()),
       fetchAllUsers: () => dispatch(fetchAllUsers()),
       deletePost: id => dispatch(deletePost(id)),
