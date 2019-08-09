@@ -12,7 +12,6 @@ class PostForm extends React.Component {
       };
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleFile = this.handleFile.bind(this);
-      // this.closeModal = this.props.closeModal.bind(this);
   }
 
   componentDidMount(){
@@ -25,7 +24,7 @@ class PostForm extends React.Component {
     const formData = new FormData();
     formData.append('post[caption]', that.state.caption);
     formData.append('post[photo]', that.state.photoFile);
-    // formData.append('post[userId]', that.state.userId);
+    
     this.props.createPost(formData);
     this.props.closeModal();
   
@@ -46,7 +45,6 @@ class PostForm extends React.Component {
       return e => this.setState({ [property]: e.currentTarget.value });
   }
 
-
   closeModalEsc(){
     const closeModal = this.props.closeModal;
     $(document).keydown(function(e) {
@@ -55,14 +53,6 @@ class PostForm extends React.Component {
       }
     })
   }
-  // keyPress(e) {
-  // if (e.key === "Escape") {
-  // // write your logic here.
-  //   this.props.closeModal();
-  // }
-  // }
-
-
 
   render() {
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} className="photo"/> : null;

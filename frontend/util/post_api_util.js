@@ -23,13 +23,15 @@ export const createPost = postForm => (
     })
 );
 
-export const updatePost = post => (
-    $.ajax({
-        url: `api/posts/${post.id}`,
+export const updatePost = (post, id) => {
+    return $.ajax({
+        url: `api/posts/${id}`,
         method: 'PATCH',
-        data: { post }
+        data: post,
+        contentType: false,
+        processData: false
     })
-);
+}
 
 
 export const deletePost = id => (

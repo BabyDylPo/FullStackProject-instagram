@@ -11,7 +11,6 @@ class SessionForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoLogin = this.demoLogin.bind(this);
-        // this.componentDidMount = this.componentDidMount.bind(this);
 
     }
 
@@ -47,6 +46,7 @@ class SessionForm extends React.Component {
     }
 
     /////////////////////////////////////////////////////////////////////
+    //cred goes to michael du
     async demoLogin(e) {
         e.preventDefault();
 

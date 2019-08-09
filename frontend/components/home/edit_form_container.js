@@ -1,23 +1,25 @@
 import { connect } from 'react-redux';
 
-import { editPost } from '../../actions/post_actions.js';
+import { updatePost, fetchPost } from '../../actions/post_actions.js';
 import { openModal, closeModal } from '../../actions/modal_actions';
-import PostForm from './post_form';
+import EditForm from './edit_form';
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = ({ errors, entities }) => {
     return {
         errors: errors.session,
+        post: entities.targetPost.post, //i need to target a specific post here!
         formType: 'editForm',
     };
 
 };
 
 const mapDispatchToProps = dispatch => ({
-    editPost: post => dispatch(editPost(post)),
+    updatePost: (post, id) => dispatch(updatePost(post, id)),
+    fetchPost: post => dispatch(fetchPost(post.id)),
     closeModal: () => dispatch(closeModal())
 });
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(PostForm);
+)(EditForm);

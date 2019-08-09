@@ -48,40 +48,7 @@ class SessionForm extends React.Component {
     async demoLogin(e) {
         e.preventDefault();
 
-        // const demoUser = {
-        //     username: 'demoUser',
-        //     email: 'demoUser@aol.com',
-        //     password: 'password'
-        // };
-
-        // const sleep = ms => new Promise(res => setTimeout(res, ms));
-
-        // document.getElementById('username-input').focus();
-        // for (let i = 1; i <= demoUser.username.length; i++) {
-        //     this.setState({ username: demoUser.username.substr(0, i) });
-        //     await sleep(50);
-        // }
-
-        // await sleep (250);
-
-        // document.getElementById('email-input').focus();
-        // for (let i = 1; i <= demoUser.email.length; i++) {
-        //     this.setState({ email: demoUser.email.substr(0, i) });
-        //     await sleep(50);
-        // }
-
-        // await sleep(250);
-
-        // document.getElementById('password-input').focus();
-        // for (let i = 1; i <= demoUser.password.length; i++) {
-        //     this.setState({ password: demoUser.password.substr(0, i) });
-        //     await sleep(50);
-        // }
-
-        // await sleep(250);
-
         document.getElementById('login-link').click();
-        // document.getElementById('password-input').blur();
     }
     /////////////////////////////////////////////////////////////////////////
 

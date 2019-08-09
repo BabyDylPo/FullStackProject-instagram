@@ -8,7 +8,6 @@ const receivePosts = payload => ({
     type: RECEIVE_POSTS,
     payload,
 });
-
 const receivePost = (post) => {
     
     return({
@@ -17,28 +16,22 @@ const receivePost = (post) => {
     })
     
 };
-
 const removePost = postId => ({
     type: REMOVE_POST,
     postId
 });
-
-
 //////////////////////////////////////////////////////////////
-
-
+//////////////////////////////////////////////////////////////
 export const fetchPosts = posts => dispatch => (
     APIUtil.fetchPosts(posts).then(posts => (
         dispatch(receivePosts(posts))
     ))
 );
-
 export const fetchPost = id => dispatch => (
     APIUtil.fetchPost(id).then(payload => (
         dispatch(receivePost(payload))
     ))
 );
-
 export const createPost = post => dispatch => {
     
     return(
@@ -48,12 +41,14 @@ export const createPost = post => dispatch => {
     )
     
 };
-
-export const updatePost = post => dispatch => (
-    PostApiUtil.updatePost(post)
-        .then(post => dispatch(receivePost(post)))
-);
-
+export const updatePost = (post, id) => dispatch => {
+    return(
+        APIUtil.updatePost(post, id).then(post => (
+            dispatch(receivePost(post))
+        ))
+    )
+    
+};
 export const deletePost = postId => dispatch => {
     return(
         APIUtil.deletePost(postId).then(post => dispatch(removePost(postId)))
