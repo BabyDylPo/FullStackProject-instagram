@@ -10,7 +10,6 @@ const PostIndexItem = ({ post, user, deletePost, fetchPost, openModal }) => {
         let x = document.getElementById(`drop-down-${post.id}`);
         if (x.style.display === "none") {
             x.style.display = "block";
-            console.log(fetchPost(post.id))
         } else {
             x.style.display = "none";
         }
