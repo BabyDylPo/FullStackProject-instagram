@@ -41,10 +41,3 @@ export const deletePost = id => (
     })
 );
 
-export const fetchAllUsers = data => (
-    $.ajax({
-        method: 'GET',
-        url: 'api/users',
-        data
-    })
-);

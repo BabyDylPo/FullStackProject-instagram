@@ -162,7 +162,7 @@ class SessionForm extends React.Component {
                                 
                                 className="session-link">Sign Up
 
-                                </Link>
+                            </Link>
                         </div>
                         <div className="download-link-container">
                             <p>Get the app.</p>

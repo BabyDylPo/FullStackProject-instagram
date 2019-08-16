@@ -1,6 +1,7 @@
 import React from 'react';
+import { Redirect } from "react-router-dom";
 
-const PostIndexItem = ({ post, user, deletePost, fetchPost, openModal }) => {
+const PostIndexItem = ({ post, user, deletePost, updateTargetPost, updateTargetUser, openModal }) => {
     let style = {
         display: 'none',
         backgroundColor: 'white',
@@ -10,14 +11,22 @@ const PostIndexItem = ({ post, user, deletePost, fetchPost, openModal }) => {
         let x = document.getElementById(`drop-down-${post.id}`);
         if (x.style.display === "none") {
             x.style.display = "block";
+            if (updateTargetPost !== null) {
+                updateTargetPost(post)
+            }
         } else {
             x.style.display = "none";
         }
     }
+    function updtTrgtUsr() {
+        if (updateTargetUser !== null) {
+            updateTargetUser(user)
+        }
+    };
     return(
     <li className="post-index-item">
         <div className="post-header">
-            <span className="post-user">{user ? user.username : ""}</span>
+            <button onClick={updtTrgtUsr} className="post-user">{user ? user.username : ""}</button>
             <button className="post-options" onClick={dropDownMenu} >
                 <img src={window.images.options} alt="options" className="option-image"/>
                 <div className="drop-down-menu" style={style} id={`drop-down-${post.id}`}>
