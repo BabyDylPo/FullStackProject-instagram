@@ -6,7 +6,6 @@ class PostIndex extends Component {
 
     constructor(props){
         super(props);
-        this.state
         this.users = this.props.users;
         this.updateTargetPost = this.updateTargetPost.bind(this)
         this.updateTargetUser = this.updateTargetUser.bind(this)
