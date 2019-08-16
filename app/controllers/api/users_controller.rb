@@ -13,6 +13,11 @@ class Api::UsersController < ApplicationController
             render json: @user.errors.full_messages, status: 422 #what status is this? should this be here?
         end
     end
+    def show
+        @user = User.find(params[:id])
+        render "api/users/show"
+        # render json: user
+    end
 
     private
 

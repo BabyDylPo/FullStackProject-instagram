@@ -12,6 +12,13 @@ const Greeting = ({ currentUser, logout, openModal }) => {
             <Link to="/">Signup</Link>
         </nav>
     )
+    const profileLink = () => {
+        console.log("profile linking")
+        return (
+            <Link to="/profile" className="session-link"></Link>
+        )
+    };
+
     const personalGreeting = () => (
         <div className="nav-container">
             <nav className="nav">
@@ -40,12 +47,12 @@ const Greeting = ({ currentUser, logout, openModal }) => {
                                     </a>
                                 </div>
                                 <div className="nav-sub-element">
-                                    <a href="/#/home" className="nav-sub-element-link">
+                                    <button onClick={logout} id="logout-button" className="nav-sub-element-link">
                                         <img src={window.images.heart} alt="heart-icon" className="icon" />
-                                    </a>
+                                    </button>
                                 </div>
                                 <div className="nav-sub-element">
-                                    <a href="" onClick={logout} className="sub-element-link">
+                                    <a href="/#/profile" className="sub-element-link">
                                         <img src={window.images.profile} alt="profile-icon" className="icon" />
                                     </a>
                                 </div>
