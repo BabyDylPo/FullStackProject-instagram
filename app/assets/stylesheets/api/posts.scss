@@ -71,6 +71,13 @@
 .username-caption{
     font-weight: 600;
     margin-right: 5px;
+    font: inherit;
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    margin: auto auto auto 0;
 }
 .caption-content{
 

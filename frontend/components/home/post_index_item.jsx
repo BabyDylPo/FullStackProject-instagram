@@ -40,9 +40,7 @@ const PostIndexItem = ({ post, user, deletePost, updateTargetPost, updateTargetU
 
         <img className="post-photo" src={post.photourl} alt={post.id} />
         <div className="post-caption">
-            <span className="username-caption">
-                {user ? user.username : ""}
-            </span>
+            <button onClick={updtTrgtUsr} className="username-caption">{user ? user.username : ""}</button>
             <span className="caption-content">
                 {post.caption}
             </span>
