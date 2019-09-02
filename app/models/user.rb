@@ -30,13 +30,13 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
     #########################  ASSOCIATION  ###############################
-    has_many :posts,
-        foreign_key: :user_id,
-        class_name: :Post
+    has_many :posts, foreign_key: :user_id, class_name: :Post
+    has_many :comments, foreign_key: :user_id, class_name: :Comment
 
-    has_many :comments,
-        foreign_key: :user_id,
-        class_name: :Comment
+    has_many :follower_relationships, foreign_key: :following_id, class_name: :Follow
+    has_many :followers, through: :follower_relationships, source: :follower
+    has_many :following_relationships, foreign_key: :follower_id, class_name: :Follow
+    has_many :following, through: :following_relationships, source: :following
     #######################################################################
 
   after_initialize :ensure_session_token
