@@ -29,6 +29,8 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
+    has_one_attached :photo
+
     #########################  ASSOCIATION  ###############################
     has_many :posts, foreign_key: :user_id, class_name: :Post
     has_many :comments, foreign_key: :user_id, class_name: :Comment
