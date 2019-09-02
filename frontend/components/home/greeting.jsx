@@ -6,10 +6,91 @@ class Greeting extends Component {
 
     constructor(props) {
         super(props);
+        
+        this.state = {
+            searchValue: ""
+        }
+
         this.updateTargetUser = this.updateTargetUser.bind(this)
         this.currentUser = this.props.currentUser;
         this.logout = this.props.logout;
         this.openModal = this.props.openModal;
+
+        this.clearSearch = this.clearSearch.bind(this);
+        this.closeSearch = this.closeSearch.bind(this);
+        this.findUsers = this.findUsers.bind(this);
+    
+    }
+
+    componentDidMount() {
+        
+        const {fetchAllUsers} = this.props; //why this?
+
+        fetchAllUsers();
+
+        document.addEventListener("keyDown", this.closeSearch);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener("keydown", this.clearSearch);
+    }
+
+    clearSearch() {
+        const input = document.getElementById("nav-search");
+        input.value = "";
+        input.blur(); //what does this do?
+
+        this.setState({
+            searchValue: ""
+        });
+    }
+
+    closeSearch(e) {
+        if (e.keyCode === 27) {
+            this.clearSearch();
+        }
+    }
+
+    findUsers(searchValue) {
+        const {
+            currentUser,
+            users
+        } = this.props; //does this work like mapStateToProps?
+
+        let searchResults = [];
+
+        if (searchValue) {
+            users.forEach( (user, idx) => {
+                if (user.username.toLowerCase().includes(searchValue.toLowerCase())
+                /*|| user.username.toLowerCase().includes(searchValue.toLowerCase())*/ ) {
+                    searchResults.push(
+                        <li onClick={() => this.goToUser(user)} key={idx} className="search-li">
+                            <aside className="search-photo-container">
+                                <img className="search-photo" src={user.photoUrl} />
+                            </aside>
+                            <div>
+                                <p>
+                                    {user.username}
+                                </p>
+
+                                {/* <span className="search-name">
+                                    {user.display_name} 
+                                </span> */}
+                            </div>
+                        </li>
+                    );
+                }
+            });
+        }
+        return searchResults.length === 0 ? null : searchResults;
+    }
+
+    update(field) {
+        return (e) => {
+            this.setState({
+                [field]: e.currentTarget.value
+            })
+        }
     }
 
     updateTargetUser() {
@@ -18,6 +99,20 @@ class Greeting extends Component {
     }
 
     render() {
+        let searchResults;
+        if ((this.findUsers(this.state.searchValue) === null) && (this.state.searchValue.length > 0)) {
+            searchResults = <li className="search-li">
+                <div className="no-result-search-containter">
+                    <span className="no-result-search">
+                        No results
+                    </span>
+                </div>
+            </li>
+        } else {
+            searchResults = this.findUsers(this.state.searchValue);
+            console.log(searchResults);
+        }
+
         return (
             <div className="nav-container">
                 <nav className="nav">
@@ -35,8 +130,14 @@ class Greeting extends Component {
                                 </Link>
                             </div>
                             <div className="search-element">
-                                <input type="text" className="nav-search" placeholder="search" />
-
+                                <input type="text" 
+                                       className="nav-search" 
+                                       placeholder="search user" 
+                                       onChange={this.update("searchValue")}
+                                />
+                                <ul className="search-results">
+                                    {searchResults}
+                                </ul>
                             </div>
                             <div className="nav-element">
                                 <div className="nav-element-container">
