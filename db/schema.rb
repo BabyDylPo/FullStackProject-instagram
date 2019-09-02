@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_09_182925) do
+ActiveRecord::Schema.define(version: 2019_09_02_015127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,14 @@ ActiveRecord::Schema.define(version: 2019_07_09_182925) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id", unique: true
     t.index ["user_id"], name: "index_comments_on_user_id", unique: true
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.integer "follower_id", null: false
+    t.integer "following_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["follower_id", "following_id"], name: "index_follows_on_follower_id_and_following_id", unique: true
   end
 
   create_table "post_likes", force: :cascade do |t|
