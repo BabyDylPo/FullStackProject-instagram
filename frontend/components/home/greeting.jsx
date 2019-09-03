@@ -23,7 +23,6 @@ class Greeting extends Component {
     }
 
     componentDidMount() {
-        
         const {fetchAllUsers} = this.props; //why this?
 
         fetchAllUsers();
@@ -56,11 +55,10 @@ class Greeting extends Component {
             currentUser,
             users
         } = this.props; //does this work like mapStateToProps?
-
         let searchResults = [];
-
         if (searchValue) {
             users.forEach( (user, idx) => {
+                
                 if (user.username.toLowerCase().includes(searchValue.toLowerCase())
                 /*|| user.username.toLowerCase().includes(searchValue.toLowerCase())*/ ) {
                     searchResults.push(
@@ -73,9 +71,9 @@ class Greeting extends Component {
                                     {user.username}
                                 </p>
 
-                                {/* <span className="search-name">
-                                    {user.display_name} 
-                                </span> */}
+                                <span className="search-name">
+                                    {user.displayName} 
+                                </span>
                             </div>
                         </li>
                     );
