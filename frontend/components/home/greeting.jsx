@@ -31,7 +31,7 @@ class Greeting extends Component {
     }
 
     componentWillUnmount() {
-        document.removeEventListener("keydown", this.clearSearch);
+        document.removeEventListener("keyDown", this.clearSearch);
     }
 
     clearSearch() {
@@ -50,9 +50,18 @@ class Greeting extends Component {
         }
     }
 
-    findUsers(searchValue) {
+    goToProfile(user) {
         const {
             currentUser,
+            history
+        } = this.props;
+
+        this.clearSearch();
+        history.push(user !== currentUser ? `/user/${user.id}` : '/profile');
+    }
+
+    findUsers(searchValue) {
+        const {
             users
         } = this.props; //does this work like mapStateToProps?
         let searchResults = [];
@@ -62,7 +71,7 @@ class Greeting extends Component {
                 if (user.username.toLowerCase().includes(searchValue.toLowerCase())
                 /*|| user.username.toLowerCase().includes(searchValue.toLowerCase())*/ ) {
                     searchResults.push(
-                        <li onClick={() => this.goToUser(user)} key={idx} className="search-li">
+                        <li onClick={() => this.goToProfile(user)} key={idx} className="search-li">
                             <aside className="search-photo-container">
                                 <img className="search-photo" src={user.photoUrl} />
                             </aside>

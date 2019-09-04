@@ -9,7 +9,11 @@ function Modal({ modal, closeModal }) {
         return null;
     }
     let component;
-    switch (modal) {
+    switch (modal.type) {
+        case "postView":
+            component = <PostView userId={modal.options.thisUser.id}
+                                  postId={modal.options.post.id} />;
+            break;
         case 'postForm':
             component = <PostFormContainer />;
             break;
@@ -30,13 +34,13 @@ function Modal({ modal, closeModal }) {
     );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
         modal: state.ui.modal
     };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
     return {
         closeModal: () => dispatch(closeModal())
     };
