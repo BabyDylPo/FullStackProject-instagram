@@ -17,6 +17,7 @@ class ProfileIndex extends Component {
     }
     componentDidMount() {
         this.props.fetchPosts();
+        this.props.fetchComments();
         this.props.fetchAllUsers();
         this.posts = this.props.posts.filter(post => post.userId === this.user.id )
         for (let i = 0; i < this.posts.length; i++) {

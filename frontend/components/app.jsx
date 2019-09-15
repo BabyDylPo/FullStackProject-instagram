@@ -15,6 +15,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import Home from '../components/home/home';
 import UserProfileContainer from '../components/profile/user_profile_container';
 
+
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -23,9 +24,11 @@ const App = () => (
         <Switch>
             <AuthRoute path="/login" component={LogInFormContainer} />
             <AuthRoute path="/signup" component={SignUpFormContainer} />
-            <AuthRoute path="/" component={SessionFormContainer} />
             <ProtectedRoute path="/home" component={Home} />
+            <ProtectedRoute path="/profile/edit" component={UserProfileContainer} /> 
             <ProtectedRoute path="/profile" component={UserProfileContainer} />
+            <ProtectedRoute path="/users/:userId" component={UserProfileContainer} />
+            <AuthRoute path="/" component={SessionFormContainer} />
             <Redirect to="/login"/>
         </Switch>
     </div>

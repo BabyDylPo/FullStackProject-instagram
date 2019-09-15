@@ -27,15 +27,16 @@ class Greeting extends Component {
 
         fetchAllUsers();
 
-        document.addEventListener("keyDown", this.closeSearch);
+        document.addEventListener("keydown", this.closeSearch);
     }
 
     componentWillUnmount() {
-        document.removeEventListener("keyDown", this.clearSearch);
+        document.removeEventListener("keydown", this.clearSearch);
     }
 
     clearSearch() {
-        const input = document.getElementById("nav-search");
+        const input = document.getElementsByClassName("nav-search")[0];
+
         input.value = "";
         input.blur(); //what does this do?
 
@@ -55,15 +56,15 @@ class Greeting extends Component {
             currentUser,
             history
         } = this.props;
-
+        
         this.clearSearch();
-        history.push(user !== currentUser ? `/user/${user.id}` : '/profile');
+        history.push(user !== currentUser ? `/users/${user.id}` : '/profile');
     }
 
     findUsers(searchValue) {
         const {
             users
-        } = this.props; //does this work like mapStateToProps?
+        } = this.props; 
         let searchResults = [];
         if (searchValue) {
             users.forEach( (user, idx) => {
@@ -73,7 +74,7 @@ class Greeting extends Component {
                     searchResults.push(
                         <li onClick={() => this.goToProfile(user)} key={idx} className="search-li">
                             <aside className="search-photo-container">
-                                <img className="search-photo" src={user.photoUrl} />
+                                <img className="search-photo" src={user.photourl} />
                             </aside>
                             <div>
                                 <p>
@@ -117,7 +118,6 @@ class Greeting extends Component {
             </li>
         } else {
             searchResults = this.findUsers(this.state.searchValue);
-            console.log(searchResults);
         }
 
         return (
@@ -173,4 +173,4 @@ class Greeting extends Component {
     }
 }
 
-export default Greeting;
+export default withRouter(Greeting);

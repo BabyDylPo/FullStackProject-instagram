@@ -9,11 +9,11 @@ class PostIndex extends Component {
         this.users = this.props.users;
         this.updateTargetPost = this.updateTargetPost.bind(this)
         this.updateTargetUser = this.updateTargetUser.bind(this)
+        this.goToProfile = this.goToProfile.bind(this);
     }
     componentDidMount() {
         this.props.fetchPosts();
         this.props.fetchAllUsers();
-
     }
     componentDidUpdate(prevProps) {
         if (this.props.targetPost.post !== undefined && prevProps.targetPost.post !== undefined) {
@@ -32,6 +32,15 @@ class PostIndex extends Component {
         this.props.fetchUser(user.id).then(() => window.location = "/#/profile") // lol
     }
 
+    goToProfile(user) {
+        const {
+            currentUser,
+            history
+        } = this.props;
+
+        history.push(user !== currentUser ? `/users/${user.id}` : '/profile');
+    }
+
     render() {
         let that = this;
         return (
@@ -46,6 +55,7 @@ class PostIndex extends Component {
                     openModal={(post.userId === that.props.currentUser.id) ? that.props.openModal : null}
                     updateTargetPost={(post.userId === that.props.currentUser.id) ? that.updateTargetPost : null}
                     updateTargetUser={that.updateTargetUser}
+                    goToProfile={that.goToProfile}
                     />
                     )}
                 </ul>
@@ -54,4 +64,4 @@ class PostIndex extends Component {
     }
 }
 
-export default PostIndex;
+export default withRouter(PostIndex);

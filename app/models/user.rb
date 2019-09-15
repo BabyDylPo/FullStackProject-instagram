@@ -33,6 +33,8 @@ class User < ApplicationRecord
 
     #########################  ASSOCIATION  ###############################
     has_many :posts, foreign_key: :user_id, class_name: :Post
+    has_many :post_likes, foreign_key: :user_id, class_name: :PostLike, dependent: :destroy
+
     has_many :comments, foreign_key: :user_id, class_name: :Comment
 
     has_many :follower_relationships, foreign_key: :following_id, class_name: :Follow

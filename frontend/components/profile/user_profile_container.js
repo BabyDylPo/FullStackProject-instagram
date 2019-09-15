@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import UserProfile from './user_profile';
-import { fetchAllPosts } from '../../actions/post_actions';
+import { fetchPosts } from '../../actions/post_actions';
+import { fetchComments } from '../../actions/comment_actions';
 import { logout } from '../../actions/session_actions';
 import { fetchUser } from '../../actions/user_actions';
 import { openModal } from '../../actions/modal_actions';
@@ -15,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchAllPosts: () => dispatch(fetchAllPosts()),
+        fetchPosts: () => dispatch(fetchPosts()),
+        fetchComments: () => dispatch(fetchComments()),
         fetchUser: (id) => dispatch(fetchUser(id)),
         logout: () => dispatch(logout()),
         openModal: (type, options) => dispatch(openModal(type, options))

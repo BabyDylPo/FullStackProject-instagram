@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ProfileIndex from './profile_index';
 import { fetchPosts, fetchPost, createPost, deletePost } from '../../actions/post_actions';
 import { fetchAllUsers } from '../../actions/user_actions';
+import { fetchComments } from '../../actions/comment_actions';
 import { asArray } from '../../reducers/selectors';
 import { openModal } from '../../actions/modal_actions';
 
@@ -21,6 +22,7 @@ const mapDispatchToProps = dispatch => {
         fetchPosts: () => dispatch(fetchPosts()),
         fetchPost: id => dispatch(fetchPost(id)),
         createPost: () => dispatch(createPost()),
+        fetchComments: () => dispatch(fetchComments()),
         fetchAllUsers: () => dispatch(fetchAllUsers()),
         deletePost: id => dispatch(deletePost(id)),
         openModal: modal => dispatch(openModal(modal))

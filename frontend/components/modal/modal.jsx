@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import PostFormContainer from '../home/post_form_container';
 import EditFormContainer from '../home/edit_form_container';
+import PostView from '../post/post_view'
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -11,8 +12,8 @@ function Modal({ modal, closeModal }) {
     let component;
     switch (modal.type) {
         case "postView":
-            component = <PostView userId={modal.options.thisUser.id}
-                                  postId={modal.options.post.id} />;
+            component = <PostView postId={modal.options.post.id}
+                                  userId={modal.options.thisUser.id} />;
             break;
         case 'postForm':
             component = <PostFormContainer />;

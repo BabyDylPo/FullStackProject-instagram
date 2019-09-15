@@ -1,6 +1,8 @@
 class Api::PostsController < ApplicationController
   def index
     @posts = Post.all
+    post = @posts.first
+    puts post.likers
     render :index
     # render json: post
   end
@@ -27,7 +29,7 @@ class Api::PostsController < ApplicationController
 
     if @post.update_attributes({
       caption: params[:post][:caption]
-    })
+      })
       render :show
     else
       render json: @post.errors.full_messages, status: 422

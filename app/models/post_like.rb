@@ -10,7 +10,7 @@
 #
 
 class PostLike < ApplicationRecord
-    belongs_to :user,
+    belongs_to :liker,
         primary_key: :id,
         foreign_key: :liker_id,
         class_name: :User
@@ -19,4 +19,7 @@ class PostLike < ApplicationRecord
         primary_key: :id,
         foreign_key: :post_id,
         class_name: :Post
+
+    
+
 end

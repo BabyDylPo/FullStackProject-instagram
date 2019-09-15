@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import UserProfileItem from './user_profile_item';
+import GreetingContainer from '../home/greeting_container';
+import { fetchComments } from '../../actions/comment_actions';
 
 class UserProfile extends React.Component {
     constructor(props) {
@@ -16,11 +18,14 @@ class UserProfile extends React.Component {
         window.scrollTo(0, 0); //hmmmmm.. fancy
 
         const {
-            fetchAllPosts,
+            fetchPosts,
+            fetchComments,
             fetchUser
         } = this.props;
 
-        fetchAllPosts();
+        fetchPosts();
+        fetchComments();
+
         if (this.props.match.params.userId) {
             fetchUser(this.props.match.params.userId);
         }
@@ -38,7 +43,7 @@ class UserProfile extends React.Component {
 
         const thisUser = user ? user : currentUser;
 
-        const myPosts = posts.filter(post => post.posterId === thisUser.id);
+        const myPosts = posts.filter(post => post.userId === thisUser.id);
         let postsList = myPosts.map( (post, idx) => {
             return <UserProfileItem post={post}
                                     key={idx}
@@ -56,11 +61,16 @@ class UserProfile extends React.Component {
             logoutButton = null;
         } 
 
+        let profilePic = <Link to={"profile/edit"}>
+                            <img src={thisUser.photourl} />
+                         </Link>
         if (thisUser !== currentUser) {
-            profilePic = <img src={thisUser.photoUrl} />
+            profilePic = <img src={thisUser.photourl} />
         }
 
         return (
+            <>
+            <GreetingContainer />
             <main className="user-profile-container">
                 <div className="user-profile">
                     <header className="user-profile-info">
@@ -104,6 +114,7 @@ class UserProfile extends React.Component {
                     </ul>
                 </div>
             </main>
+            </>
         )
 
     }
