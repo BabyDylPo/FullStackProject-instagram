@@ -23,11 +23,12 @@ class Post < ApplicationRecord
   has_many :likes,
     primary_key: :id,
     foreign_key: :post_id,
-    class_name: :PostLike
+    class_name: :PostLike,
+    dependent: :destroy
 
   has_many :likers,
     through: :likes,
-    source: :user
+    source: :liker
 
   has_many :comments,
     primary_key: :id,

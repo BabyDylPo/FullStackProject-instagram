@@ -1,0 +1,63 @@
+// Place all the styles related to the api/Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-comments-list {
+    list-style: none;
+}
+
+.post-comments-list li {
+    padding-top: 5px;
+}
+
+.comment-username a {
+    text-decoration: none;
+    font-weight: 450;
+    color: inherit;
+}
+
+.deletable:hover {
+    cursor: pointer;
+    opacity: 0.50;
+}
+
+.deletable {
+    font-weight: 350;
+}
+
+.not-deletable {
+    font-weight: 350;
+}
+
+.hide-delete {
+    display: none;
+}
+
+.show-delete {
+    color: firebrick;
+    font-weight: 350;
+    font-size: 14px;
+}
+
+.comment-body {
+    font-weight: 350;
+}
+
+.post-comment-form-container {
+    border-top: 1px solid #EFEFEF;
+    margin-top: 4px;
+    min-height: 56px;
+}
+
+.post-comment-form input {
+    resize: none;
+    min-height: 18px;
+    color: #262626;
+    font-size: 14px;
+    line-height: 18px;
+    width: 582px;
+    border: 0;
+    max-height: 80px;
+    outline: 0;
+    padding: 0;
+}

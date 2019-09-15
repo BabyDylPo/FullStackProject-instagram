@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from "react-router-dom";
 
-const PostIndexItem = ({ post, user, deletePost, updateTargetPost, updateTargetUser, openModal }) => {
+const PostIndexItem = ({ post, user, deletePost, updateTargetPost, updateTargetUser, goToProfile, openModal }) => {
     let style = {
         display: 'none',
         backgroundColor: 'white',
@@ -23,10 +23,14 @@ const PostIndexItem = ({ post, user, deletePost, updateTargetPost, updateTargetU
             updateTargetUser(user)
         }
     };
+
+
+    const awsPhotoUrl = post.awsPhotoUrl.split("?")[0];
+
     return(
     <li className="post-index-item">
         <div className="post-header">
-            <button onClick={updtTrgtUsr} className="post-user">{user ? user.username : ""}</button>
+            <button onClick={() => goToProfile(user)} className="post-user">{user ? user.username : ""}</button>
             <button className="post-options" onClick={dropDownMenu} >
                 <img src={window.images.options} alt="options" className="option-image"/>
                 <div className="drop-down-menu" style={style} id={`drop-down-${post.id}`}>
@@ -38,11 +42,9 @@ const PostIndexItem = ({ post, user, deletePost, updateTargetPost, updateTargetU
             </button>
         </div>
 
-        <img className="post-photo" src={post.photourl} alt={post.id} />
+            <img className="post-photo" src={`https://res.cloudinary.com/dssjvvbkx/image/fetch/w_600,c_scale/${awsPhotoUrl}`} alt={post.id} />
         <div className="post-caption">
-            <span className="username-caption">
-                {user ? user.username : ""}
-            </span>
+            <button onClick={updtTrgtUsr} className="username-caption">{user ? user.username : ""}</button>
             <span className="caption-content">
                 {post.caption}
             </span>
@@ -52,3 +54,4 @@ const PostIndexItem = ({ post, user, deletePost, updateTargetPost, updateTargetU
 };
 
 export default PostIndexItem;
+
